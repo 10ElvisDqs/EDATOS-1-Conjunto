@@ -1,0 +1,128 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+#include "vcl.h"
+#include "UVector.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+CVector::CVector(TCanvas *CV, int x, int y)
+{ n=0;
+  Lienzo=CV;
+  ix=x;
+  iy=y;
+}
+
+int CVector::GetN()
+{ return n;}
+
+void CVector::SetN(int valor)
+{   if(n<=max)
+	{  n=valor;}
+	else
+	{ ShowMessage("Dimensión errónea");}
+}
+
+int CVector::GetElem(int pos)
+{   if(pos<n)
+	{  return V[pos];}
+	else
+	{  ShowMessage("Posición errónea");}
+}
+
+void CVector::SetElem(int pos, int valor)
+{   if(pos<n)
+	{  V[pos]=valor;}
+	else
+	{  ShowMessage("Posición errónea");}
+}
+
+int CVector::ContarElem(int elem)
+{  int c=0;
+   for(int i=0;i<n;i++)
+   {  if(V[i]==elem)
+	  {  c++;}
+   }
+   return c;
+}
+
+void CVector::ElemiinarElemPos(int pos)
+{    if(pos<n)
+	 {  for(int i=pos;i<n-1;i++)
+		{    V[i]=V[i+1];}
+		n--;
+	 }
+	 else
+	 {  ShowMessage("Posicion errónea");}
+
+}
+
+void CVector::InsertarElemPos(int pos, int elem)
+{    if(pos<n && n<max)
+	 {  n++;
+		for(int i=n-1;i>pos;i--)
+		{  V[i]=V[i-1];}
+		V[pos]=elem;
+	 }
+	 else
+	 {  ShowMessage("Posicion errónea");}
+}
+
+int CVector::BusquedaSecuencial(int elem)
+{  int i=n-1;
+   while (i>=0 && V[i]!=elem)
+   {  i--;}
+   return i;
+}
+
+int CVector::BusquedaBinaria(int elem)
+{  int ini=0, fin=n-1, pivote=(ini+fin)/2;
+   while(ini<=fin && V[pivote]!=elem)
+   {     if(elem>V[pivote])
+		 {  ini=pivote+1;}
+		 if(elem<V[pivote])
+		 {  fin=pivote-1;}
+		 pivote=(ini+fin)/2;
+   }
+   if(V[pivote]==elem)
+   { return pivote;}
+   else
+   { return -1;}
+}
+
+void CVector::LlenarVector()
+{   n=max;
+	Randomize();
+	for(int i=0;i<n;i++)
+	{  V[i]=Random(100);  }
+}
+
+void CVector::DibujarLinea(int x,int y, int elem)
+{      Lienzo->Pen->Color=clWhite;
+	   Lienzo->MoveTo(x,y);
+	   Lienzo->LineTo(x,y+(100-elem));
+	   Lienzo->Pen->Color=clGreen;
+	   Lienzo->LineTo(x,y+100);
+}
+
+void CVector::DibujarVector()
+{  for(int i=0;i<n;i++)
+   {  DibujarLinea(ix+2*i,iy,V[i]);  }
+}
+
+void CVector::Intercambiar(int pos1, int pos2)
+{   int aux=V[pos2];
+	V[pos2]=V[pos1];
+	V[pos1]=aux;
+}
+
+void CVector::OrdenarIntercambio()
+{  for(int i=0;i<n-1;i++)
+   {  for(int j=i+1;j<n;j++)
+	  {    if(V[j]<V[i])
+		   { Intercambiar(i,j);
+			 DibujarLinea(ix+2*i,iy,V[i]);
+			 DibujarLinea(ix+2*j,iy,V[j]);
+		   }
+	  }
+   }
+}

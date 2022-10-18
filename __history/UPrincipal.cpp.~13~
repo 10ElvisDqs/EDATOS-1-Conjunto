@@ -1,0 +1,57 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include "UVector.h"
+#include "UPrincipal.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+CVector *Vector;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{     Vector=new CVector;
+}
+//---------------------------------------------------------------------------
+
+void TForm1::SGACVector(TStringGrid *SG, CVector *CV)
+{   CV->Dimension=SG->ColCount;
+	for(int i=0;i<SG->ColCount;i++)
+	{  CV->Celda[i]=StrToInt(SG->Cells[i][0]);}
+}
+
+void TForm1::CVectorASG(CVector *CV, TStringGrid *SG)
+{   SG->ColCount=CV->Dimension;
+	for(int i=0;i<CV->Dimension;i++)
+	{ SG->Cells[i][0]=CV->Celda[i];}
+}
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	   SGVector->ColCount=StrToInt(EDimensión->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarElemento1Click(TObject *Sender)
+{    SGACVector(SGVector,Vector);
+     EResultado->Text=Vector->ContarElem(StrToInt(EElemento->Text));
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarElempos1Click(TObject *Sender)
+{
+	 SGACVector(SGVector,Vector);
+	 Vector->ElemiinarElemPos(StrToInt(EPosicion->Text));
+	 CVectorASG(Vector,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::BsquedaSecuencial1Click(TObject *Sender)
+{    SGACVector(SGVector,Vector);
+     EResultado->Text=Vector->BusquedaSecuencial(StrToInt(EElemento->Text));
+
+}
+//---------------------------------------------------------------------------
+

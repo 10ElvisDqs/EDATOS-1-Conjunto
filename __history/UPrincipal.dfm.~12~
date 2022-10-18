@@ -1,0 +1,131 @@
+﻿object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 289
+  ClientWidth = 559
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 72
+    Top = 13
+    Width = 31
+    Height = 13
+    Caption = 'Vector'
+  end
+  object Resultado: TLabel
+    Left = 99
+    Top = 114
+    Width = 48
+    Height = 13
+    Caption = 'Resultado'
+  end
+  object Label2: TLabel
+    Left = 286
+    Top = 82
+    Width = 44
+    Height = 13
+    Caption = 'Elemento'
+  end
+  object Label3: TLabel
+    Left = 292
+    Top = 109
+    Width = 38
+    Height = 13
+    Caption = 'Posici'#243'n'
+  end
+  object SGVector: TStringGrid
+    Left = 72
+    Top = 32
+    Width = 385
+    Height = 41
+    ColCount = 1
+    DefaultColWidth = 30
+    FixedCols = 0
+    RowCount = 1
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 72
+    Top = 77
+    Width = 75
+    Height = 25
+    Caption = 'Dimensionar'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object EDimensión: TEdit
+    Left = 153
+    Top = 79
+    Width = 56
+    Height = 21
+    TabOrder = 2
+  end
+  object EResultado: TEdit
+    Left = 153
+    Top = 106
+    Width = 56
+    Height = 21
+    TabOrder = 3
+  end
+  object EElemento: TEdit
+    Left = 336
+    Top = 79
+    Width = 57
+    Height = 21
+    TabOrder = 4
+  end
+  object EPosicion: TEdit
+    Left = 336
+    Top = 106
+    Width = 57
+    Height = 21
+    TabOrder = 5
+  end
+  object MainMenu1: TMainMenu
+    Left = 8
+    object Funciones1: TMenuItem
+      Caption = 'Funciones'
+      object ContarElemento1: TMenuItem
+        Caption = 'Contar Elemento'
+        OnClick = ContarElemento1Click
+      end
+      object Busquedas1: TMenuItem
+        Caption = 'Busquedas'
+        object BsquedaSecuencial1: TMenuItem
+          Caption = 'Secuencial'
+          OnClick = BsquedaSecuencial1Click
+        end
+        object Binaria1: TMenuItem
+          Caption = 'Binaria'
+          OnClick = Binaria1Click
+        end
+      end
+    end
+    object Procedimientos1: TMenuItem
+      Caption = 'Procedimientos'
+      object EliminarElempos1: TMenuItem
+        Caption = 'Eliminar Elem pos'
+        OnClick = EliminarElempos1Click
+      end
+      object LlenarVector1: TMenuItem
+        Caption = 'Llenar Vector'
+        OnClick = LlenarVector1Click
+      end
+      object DibujarVector1: TMenuItem
+        Caption = 'Dibujar Vector'
+        OnClick = DibujarVector1Click
+      end
+    end
+  end
+end

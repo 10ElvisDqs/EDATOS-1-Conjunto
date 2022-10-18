@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/08/04 23:06:48.000.591,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2020/08/04 23:06:48.000.623,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2021/12/07 08:24:14.000.990,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2021/12/07 08:24:15.000.053,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2021/12/07 08:24:33.000.358,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2021/12/07 08:48:33.000.432,C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit2.cpp=E:\Daniel\2021\2-2021\INF210\Clase Vector\UVector.cpp</Transaction>
+    <Transaction>2021/12/07 08:48:33.000.432,C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit2.h=E:\Daniel\2021\2-2021\INF210\Clase Vector\UVector.h</Transaction>
+    <Transaction>2021/12/07 08:48:42.000.116,C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\Daniel\2021\2-2021\INF210\Clase Vector\UPrincipal.dfm</Transaction>
+    <Transaction>2021/12/07 08:48:42.000.116,C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.cpp=E:\Daniel\2021\2-2021\INF210\Clase Vector\UPrincipal.cpp</Transaction>
+    <Transaction>2021/12/07 08:48:42.000.116,C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.h=E:\Daniel\2021\2-2021\INF210\Clase Vector\UPrincipal.h</Transaction>
+    <Transaction>2021/12/07 08:48:48.000.300,C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=E:\Daniel\2021\2-2021\INF210\Clase Vector\Pvec.h</Transaction>
+    <Transaction>2021/12/07 08:48:56.000.434,C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1.cbproj=E:\Daniel\2021\2-2021\INF210\Clase Vector\PVector.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

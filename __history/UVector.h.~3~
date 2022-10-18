@@ -1,0 +1,23 @@
+//---------------------------------------------------------------------------
+
+#ifndef UVectorH
+#define UVectorH
+//---------------------------------------------------------------------------
+
+const max=100;
+class CVector
+{  private:
+	 int V[max];
+	 int n;
+	 int GetN();
+	 void SetN(int valor);
+	 int GetElem(int pos);
+	 void SetElem(int pos, int valor);
+   public:
+	 CVector();
+	 __property int Dimension={read=GetN, write=SetN};
+	 __property int Celda[int pos]={read=GetElem, write=SetElem};
+	 int ContarElem(int elem);
+};
+
+#endif
